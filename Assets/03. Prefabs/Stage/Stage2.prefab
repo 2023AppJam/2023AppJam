@@ -9,10 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 524202079716525317}
+  - component: {fileID: 4099866419687773628}
   - component: {fileID: 8182755272608064715}
   - component: {fileID: 5659207238283542598}
   - component: {fileID: 6510460326014045904}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tilemap_VillageCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,6 +35,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6436988650779495531}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4099866419687773628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484977406202200186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68711cb4437ec2243a5389f86bcac2c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockData: {fileID: 11400000, guid: f30cd43a6a0ddbe4a958f25d6f8cd564, type: 2}
+  onDestoryEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7786584546609501469}
+        m_TargetAssemblyTypeName: StageInformation, Assembly-CSharp
+        m_MethodName: DefeatStage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1839735485 &8182755272608064715
 Tilemap:
   m_ObjectHideFlags: 0
@@ -367,7 +396,7 @@ TilemapRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484977406202200186}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1

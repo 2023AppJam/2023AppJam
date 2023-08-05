@@ -34,7 +34,7 @@ public class StageInformation : PoolableMono
 
     public void DefeatStage()
     {
-
+        
     }
 
     public override void Init()
