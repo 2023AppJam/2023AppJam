@@ -84,4 +84,9 @@ public class GameManager : MonoBehaviour
             return blockBuilder;
         }
     }
+
+    private void Start()
+    {
+        AudioManager.Instance.PlayBGM("IntroBGM");
+    }
 }

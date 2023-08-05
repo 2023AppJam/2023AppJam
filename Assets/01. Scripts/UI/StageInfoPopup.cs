@@ -28,7 +28,7 @@ public class StageInfoPopup : MonoBehaviour
         gameObject.SetActive(true);
 
         stageText.text = $"스테이지 {stageData.stageIndex}";
-        purposeText.text = $"{stageData.runningTime} 초 버티셈 ㅋㅋ";
+        purposeText.text = $"밀려오는 홍수를\n{stageData.runningTime} 초간 버티세요!!";
         slot.SetBlocks(stageData.blockList);
 
         stageIndex = stageData.stageIndex;

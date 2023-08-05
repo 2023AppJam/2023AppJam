@@ -6,4 +6,9 @@ public class PlayAudio : MonoBehaviour
     {
         AudioManager.Instance.PlaySystem(clipName);
     }
+
+    public void PlayBGM(string clipName)
+    {
+        AudioManager.Instance.PlayBGM(clipName);
+    }
 }
