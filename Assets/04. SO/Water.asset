@@ -16,5 +16,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   blockSprite: {fileID: 0}
+  polygon: {fileID: 0}
+  blockName: 
   maxHP: 1
   damage: 1
