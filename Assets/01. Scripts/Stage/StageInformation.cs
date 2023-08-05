@@ -8,13 +8,33 @@ public class StageInformation : PoolableMono
 
     private WaterPump pump;
 
+    private bool started = false;
+    private float timer = 0f;
+
     private void Awake()
     {
         //pump = transform.Find("WaterPump").GetComponent<WaterPump>();
     }
 
+    private void Update()
+    {
+        if (started == false)
+            return;
+
+        timer += Time.deltaTime;
+        GameManager.Instance.RemainText.text = $"남은 시간 : {(int)(stageData.runningTime - timer)}";
+
+        if(timer >= stageData.runningTime)
+        {
+            // 게임 클리어
+            Init();
+            StageManager.Instance.ClearStage();
+        }
+    }
+
     public override void Init()
     {
+        started = false;
         StopAllCoroutines();
     }
 
