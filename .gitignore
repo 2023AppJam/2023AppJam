@@ -467,3 +467,8 @@ FodyWeavers.xsd
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudio,unity
+Assets/01. Scripts/Stage/.idea/.idea.Stage.dir/.idea/
+
+.idea/.idea.2023AppJam/.idea/
+
+.idea/.idea.2023AppJam.dir/.idea/
