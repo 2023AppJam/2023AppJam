@@ -41,8 +41,8 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        _ui.Find("RemainTime").GetComponent<Text>().text =
-            $"남은 시간 : {StageManager.Instance.CurrentStageInformation.waterAmount}";
+        //_ui.Find("RemainTime").GetComponent<Text>().text =
+        //    $"남은 시간 : {StageManager.Instance.CurrentStageInformation.waterAmount}";
     }
 
     public void ShowPopup(string caption, string content)
@@ -58,9 +58,17 @@ public class UIManager : MonoBehaviour
         ShowPopup($"스테이지 {StageManager.Instance.currentStage}", explainText);
     }
 
-    public void OnClick()
+    public void ClosePopup()
     {
+        SoundManager.Instance.PlayClickSound();
         Transform popup = _ui.Find("Popup");
         popup.gameObject.SetActive(false);
+    }
+
+    public void OpenItemBox()
+    {
+        SoundManager.Instance.PlayClickSound();
+        GameObject itemBox = _ui.Find("ItemBox").gameObject;
+        itemBox.SetActive(!itemBox.activeSelf);
     }
 }
