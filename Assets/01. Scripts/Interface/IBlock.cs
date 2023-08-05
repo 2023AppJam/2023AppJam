@@ -2,5 +2,5 @@ using UnityEngine;
 
 public interface IBlock
 {
-    //public void 
+    public void OnDamage(float damage);
 }
