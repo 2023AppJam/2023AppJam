@@ -63,6 +63,7 @@ public class UIManager : MonoBehaviour
         // 클릭사운드
         Transform popup = _ui.Find("Popup");
         popup.gameObject.SetActive(false);
+        Time.timeScale = 1;
     }
 
     public void OpenItemBox()
@@ -76,5 +77,11 @@ public class UIManager : MonoBehaviour
     {
         _ui.Find("Levels").gameObject.SetActive(true);
         _ui.Find("Main").gameObject.SetActive(false);
+    }
+
+    public void StopGame()
+    {
+        Time.timeScale = 0;
+        ShowPopup("일시정지", "일시정지가 활성화되었습니다.\n재시작하려면 '확인'을 눌러주세요.");
     }
 }
