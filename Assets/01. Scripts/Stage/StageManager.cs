@@ -84,6 +84,7 @@ public class StageManager : MonoBehaviour
         {
             canvas.SetActive(false);
         }
+
         //if (currentStage >= stagePrefabs.Count)
         //{
         //    Debug.Log("Game Clear!");
