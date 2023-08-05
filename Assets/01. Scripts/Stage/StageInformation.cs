@@ -6,7 +6,11 @@ public class StageInformation : PoolableMono
     [SerializeField] StageDataSO stageData;
     public StageDataSO StageData => stageData;
 
+    [SerializeField] AudioClip clip;
+    private AudioSource source;
+
     private WaterPump pump;
+    private Transform arrows;
 
     private bool started = false;
     private float timer = 0f;
@@ -14,6 +18,8 @@ public class StageInformation : PoolableMono
     private void Awake()
     {
         pump = GetComponent<WaterPump>();
+        source = GetComponent<AudioSource>();
+        arrows = transform.Find("Arrows");
     }
 
     private void Update()
@@ -22,6 +28,7 @@ public class StageInformation : PoolableMono
             return;
 
         timer += Time.deltaTime;
+        Debug.Log((int)(stageData.runningTime - timer));
         GameManager.Instance.RemainText.text = $"남은 시간 : {(int)(stageData.runningTime - timer)}";
 
         if(timer >= stageData.runningTime)
@@ -41,10 +48,13 @@ public class StageInformation : PoolableMono
     {
         started = false;
         StopAllCoroutines();
+        arrows.gameObject.SetActive(true);
+        pump.Init();
     }
 
     public void StartSequence()
     {
+        arrows.gameObject.SetActive(false);
         StartCoroutine(SequenceCoroutine());
     }
 
@@ -54,6 +64,7 @@ public class StageInformation : PoolableMono
         {
             yield return new WaitForSeconds(sequence.delay);
             pump.SplashWater(sequence.count, sequence.pos, sequence.dir, sequence.interval);
+            source.PlayOneShot(clip);
         }
     }
 }

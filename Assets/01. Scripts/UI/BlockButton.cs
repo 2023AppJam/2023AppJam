@@ -14,5 +14,7 @@ public class BlockButton : MonoBehaviour
 
         if(slot.Blocks[index].quantity > 0)
             builder.ChangeBlock(slot.Blocks[index].block, () => slot.UseBlock(index));
+
+        AudioManager.Instance.PlaySystem("ButtonClick");
     }
 }

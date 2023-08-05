@@ -36,6 +36,7 @@ public class StageInfoPopup : MonoBehaviour
 
     public void ClosePanel()
     {
+        AudioManager.Instance.PlaySystem("ButtonClick");
         gameObject.SetActive(false);
     }
 }
