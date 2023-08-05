@@ -38,19 +38,14 @@ public class StageManager : MonoBehaviour
     #endregion
 
     public int currentStage { get; private set; }
-    public GameObject canvas;
-    public StageInformation CurrentStageInformation { get; private set; }
-    private GameObject _currentStageGameObject;
-    public List<GameObject> stagePrefabs = new();
+
+    private StageInformation _currentStageInfo;
+    public StageInformation CurrentStageInfo => _currentStageInfo;
 
     public void ClearStage()
     {
         Debug.Log("Stage #" + currentStage + " Cleared!");
-        // TODO Display Stage Clear UI
-        if (canvas)
-        {
-            canvas.SetActive(true);
-        }
+        // Å¬¸®¾î ÆË¾÷ ¶ç¿ì±â
     }
     
     public void SelectStage(int stageNumber)
@@ -72,24 +67,16 @@ public class StageManager : MonoBehaviour
 
     private void LoadStage()
     {
-        if (canvas)
-        {
-            canvas.SetActive(false);
-        }
-        if (currentStage >= stagePrefabs.Count)
-        {
-            Debug.Log("Game Clear!");
-            return;
-        }
+        if (GameManager.Instance.StagePanel)
+            GameManager.Instance.StagePanel.SetActive(false);
         
-        Debug.Log("Destroying GameObject for Stage #" + (currentStage - 1));
-        if (_currentStageGameObject)
-        {
-            Destroy(_currentStageGameObject);
-        }
-        _currentStageGameObject = stagePrefabs[currentStage];
-        Debug.Log("Instantiating GameObject for Stage #" + currentStage);
-        Instantiate(stagePrefabs[currentStage]); // Edit later using PoolManager
-        CurrentStageInformation = _currentStageGameObject.GetComponent<StageInformation>();
+        if (_currentStageInfo)
+            PoolManager.Instance.Push(_currentStageInfo);
+
+        _currentStageInfo = PoolManager.Instance.Pop($"Stage{currentStage}") as StageInformation;
+        _currentStageInfo.transform.position = Vector3.zero;
+
+        GameManager.Instance.InGamePanel.SetActive(true);
+        GameManager.Instance.Slot.SetBlocks(_currentStageInfo.StageData.blockList);
     }
 }

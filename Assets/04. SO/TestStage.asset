@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a10cd41bf00f47746a69b5fd0ae9c7ba, type: 3}
+  m_Name: TestStage
+  m_EditorClassIdentifier: 
+  blockList:
+  - block: {fileID: 11400000, guid: 6c37d18a41ed5c541ac3f27377617b29, type: 2}
+    quantity: 3
+  - block: {fileID: 11400000, guid: 4dd0713a68f61fd42a02a825bb225f56, type: 2}
+    quantity: 4
+  - block: {fileID: 11400000, guid: fa04ff14f196cd84ab1d6024e564a6e4, type: 2}
+    quantity: 5
+  pumpSequence: []
+  runningTime: 0
+  stageIndex: 0
