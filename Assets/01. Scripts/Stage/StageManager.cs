@@ -48,16 +48,25 @@ public class StageManager : MonoBehaviour
     }
 
     public int currentStage { get; private set; }
-    public GameObject canvas;
+    
+    private GameObject stageUICanvas;
+    public GameObject StageUICanvas {
+        get {
+            if (stageUICanvas == null)
+                stageUICanvas = GameObject.Find("StageUI");
+            return stageUICanvas;
+        }
+    }
+
     private StageInformation _currentStageInfo;
 
     public void ClearStage()
     {
         Debug.Log("Stage #" + currentStage + " Cleared!");
         // TODO Display Stage Clear UI
-        if (canvas)
+        if (StageUICanvas)
         {
-            canvas.SetActive(true);
+            StageUICanvas.SetActive(true);
         }
     }
     
@@ -80,9 +89,9 @@ public class StageManager : MonoBehaviour
 
     private void LoadStage()
     {
-        if (canvas)
+        if (StageUICanvas)
         {
-            canvas.SetActive(false);
+            StageUICanvas.SetActive(false);
         }
 
         //if (currentStage >= stagePrefabs.Count)

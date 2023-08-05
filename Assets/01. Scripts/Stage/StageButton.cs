@@ -4,8 +4,8 @@ public class StageButton : MonoBehaviour
 {
     [SerializeField] StageDataSO stageData; // Set Stage Info Popup
 
-    public void LoadStage()
+    public void ShowStageInfo()
     {
-        StageManager.Instance.SelectStage(stageData.stageIndex);
+        GameManager.Instance.StageInfoPopup?.ShowPanel(stageData);
     }
 }
