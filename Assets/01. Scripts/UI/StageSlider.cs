@@ -22,6 +22,7 @@ public class StageSlider : MonoBehaviour
         if (slider.localPosition.x <= length)
             return;
 
+        AudioManager.Instance.PlaySystem("ButtonClick");
         StartCoroutine(SlideCoroutine(-1920f));
     }
 
@@ -33,6 +34,7 @@ public class StageSlider : MonoBehaviour
         if (slider.localPosition.x >= 0)
             return;
 
+        AudioManager.Instance.PlaySystem("ButtonClick");
         StartCoroutine(SlideCoroutine(1920f));
     }
 

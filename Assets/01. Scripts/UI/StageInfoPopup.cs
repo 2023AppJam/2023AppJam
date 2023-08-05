@@ -19,6 +19,7 @@ public class StageInfoPopup : MonoBehaviour
 
     public void StartStage()
     {
+        AudioManager.Instance.PlaySystem("ButtonClick");
         StageManager.Instance.SelectStage(stageIndex);
     }
 

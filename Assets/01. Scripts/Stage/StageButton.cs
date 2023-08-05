@@ -7,5 +7,6 @@ public class StageButton : MonoBehaviour
     public void ShowStageInfo()
     {
         GameManager.Instance.StageInfoPopup?.ShowPanel(stageData);
+        AudioManager.Instance.PlaySystem("ButtonClick");
     }
 }
