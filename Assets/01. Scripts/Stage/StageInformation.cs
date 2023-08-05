@@ -11,6 +11,7 @@ public class StageInformation : PoolableMono
 
     private WaterPump pump;
     private Transform arrows;
+    private Block village;
 
     private bool started = false;
     private float timer = 0f;
@@ -20,6 +21,8 @@ public class StageInformation : PoolableMono
         pump = GetComponent<WaterPump>();
         source = GetComponent<AudioSource>();
         arrows = transform.Find("Arrows");
+
+        village = GetComponentInChildren<Block>();
     }
 
     private void Update()
@@ -28,7 +31,6 @@ public class StageInformation : PoolableMono
             return;
 
         timer += Time.deltaTime;
-        Debug.Log((int)(stageData.runningTime - timer));
         GameManager.Instance.RemainText.text = $"남은 시간 : {(int)(stageData.runningTime - timer)}";
 
         if(timer >= stageData.runningTime)
@@ -41,7 +43,11 @@ public class StageInformation : PoolableMono
 
     public void DefeatStage()
     {
-        GameObject.Find("InGamePanel").transform.GetChild(2).gameObject.SetActive(true);
+        if(started)
+        {
+            started = false;
+            GameManager.Instance.InGamePanel.transform.GetChild(2).gameObject.SetActive(true);
+        }
     }
 
     public override void Init()
@@ -49,11 +55,13 @@ public class StageInformation : PoolableMono
         started = false;
         StopAllCoroutines();
         arrows.gameObject.SetActive(true);
-        pump.Init();
+        village.Init();
+        //pump.Init();
     }
 
     public void StartSequence()
     {
+        started = true;
         arrows.gameObject.SetActive(false);
         StartCoroutine(SequenceCoroutine());
     }
