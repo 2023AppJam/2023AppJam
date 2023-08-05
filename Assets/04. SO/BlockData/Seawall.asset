@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 81bbf0c1065abbe43bb6e32e43d804bd, type: 3}
-  m_Name: OrangeWallFront
+  m_Name: Seawall
   m_EditorClassIdentifier: 
   targetLayer:
     serializedVersion: 2
     m_Bits: 16
-  blockSprite: {fileID: 21300000, guid: 8e67f6de9a60b74489d77d4e106bb8f0, type: 3}
-  polygon: {fileID: 124484500008695219, guid: 49a13a9edadbe1b4aabe42f0026cebfb, type: 3}
-  blockName: OrangeWallFront
-  maxHP: 10
-  damage: 1
+  blockSprite: {fileID: 21300000, guid: a89544a2f2412b04e88bb004922f6cfc, type: 3}
+  polygon: {fileID: 124484500008695219, guid: 02e678acab710d44aaa4a3efa61b91d7, type: 3}
+  blockName: Seawall
+  maxHP: 20
+  damage: 3

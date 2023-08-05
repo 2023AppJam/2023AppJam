@@ -9,11 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7699acd57b26ae4cb0fd832354cfbac, type: 3}
+  m_Script: {fileID: 11500000, guid: 81bbf0c1065abbe43bb6e32e43d804bd, type: 3}
   m_Name: OrangeWallRight
   m_EditorClassIdentifier: 
   targetLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 16
+  blockSprite: {fileID: 21300000, guid: 45148a0df44e7c5428b12536a6c99a19, type: 3}
+  polygon: {fileID: 124484500008695219, guid: 4348ef6d530fffb42933cfe4e3ed5a55, type: 3}
+  blockName: OrangeWallRight
   maxHP: 10
-  damage: 0
+  damage: 1
