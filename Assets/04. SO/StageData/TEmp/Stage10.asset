@@ -14,7 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockList:
   - block: {fileID: 11400000, guid: 03d71b63e408ed84887e749b9ce0bb7a, type: 2}
-    quantity: 3
+    quantity: 5
+  - block: {fileID: 11400000, guid: 2bea05e80afa40a4396e928a165ace76, type: 2}
+    quantity: 5
+  - block: {fileID: 11400000, guid: b83a97218003e4f40aae1fd30f1065f1, type: 2}
+    quantity: 5
+  - block: {fileID: 11400000, guid: a97ddfc740e8bab4fb9af24804c67d98, type: 2}
+    quantity: 5
+  - block: {fileID: 11400000, guid: 7d37dc6b66e923b489435930b8f2a064, type: 2}
+    quantity: 5
   pumpSequence:
   - pos: {x: 19, y: -5}
     dir: {x: -8.7309, y: -4.4145}

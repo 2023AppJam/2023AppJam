@@ -78,6 +78,8 @@ public class StageManager : MonoBehaviour
         _currentStageInfo.transform.position = Vector3.zero;
 
         GameManager.Instance.InGamePanel.SetActive(true);
+        GameManager.Instance.Slot.transform.parent.gameObject.SetActive(true);
+        GameManager.Instance.RemainText.gameObject.SetActive(true);
         GameManager.Instance.Slot.SetBlocks(_currentStageInfo.StageData.blockList);
     }
 }

@@ -89,6 +89,8 @@ public class BlockBuilder : MonoBehaviour
         buildAble = true;
         blockSelected = false;
 
+        block.transform.SetParent(StageManager.Instance.CurrentStageInfo.Parents);
+
         onBuildEvent?.Invoke();
     }
 }

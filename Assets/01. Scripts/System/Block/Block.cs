@@ -6,7 +6,7 @@ public class Block : PoolableMono, IDamageable
     [SerializeField] BlockDataSO blockData;
     [SerializeField] UnityEvent onDestoryEvent;
 
-    private float hp;
+    public float hp;
 
     private void Awake()
     {
@@ -49,6 +49,5 @@ public class Block : PoolableMono, IDamageable
     public override void Init()
     {
         hp = blockData.maxHP;
-        Debug.Log(hp);
     }
 }

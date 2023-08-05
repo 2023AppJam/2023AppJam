@@ -13,6 +13,9 @@ public class StageInformation : PoolableMono
     private Transform arrows;
     private Block village;
 
+    private Transform parents = null;
+    public Transform Parents => parents;
+
     private bool started = false;
     private float timer = 0f;
 
@@ -21,6 +24,7 @@ public class StageInformation : PoolableMono
         pump = GetComponent<WaterPump>();
         source = GetComponent<AudioSource>();
         arrows = transform.Find("Arrows");
+        parents = transform.Find("Parents");
 
         village = GetComponentInChildren<Block>();
     }
@@ -52,16 +56,26 @@ public class StageInformation : PoolableMono
 
     public override void Init()
     {
+        GameManager.Instance.RemainText.text = "";
         started = false;
         StopAllCoroutines();
         arrows.gameObject.SetActive(true);
-        village.Init();
+
+        while(parents.childCount > 0)
+        {
+            if (parents.GetChild(0).TryGetComponent<PoolableMono>(out PoolableMono obj))
+                PoolManager.Instance.Push(obj);
+
+        }
+
+        timer = 0f;
         //pump.Init();
     }
 
     public void StartSequence()
     {
         started = true;
+        village.Init();
         arrows.gameObject.SetActive(false);
         StartCoroutine(SequenceCoroutine());
     }
