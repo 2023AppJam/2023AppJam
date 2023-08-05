@@ -176,7 +176,7 @@ Transform:
   m_GameObject: {fileID: 3998285969150121610}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.887535, y: 11.672937, z: 0.22998944}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -207,8 +207,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68711cb4437ec2243a5389f86bcac2c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockData: {fileID: 11400000, guid: 9a5374c05e20f5d46bdcbaf5657b4a2e, type: 2}
-  onDestoryEvnet:
+  blockData: {fileID: 11400000, guid: e3c3a6ea34c16274aab7f6c755b9bd12, type: 2}
+  onDestoryEvent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!212 &7417547050992781670
@@ -251,7 +251,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 15
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0, g: 0.68757534, b: 1, a: 1}
   m_FlipX: 0

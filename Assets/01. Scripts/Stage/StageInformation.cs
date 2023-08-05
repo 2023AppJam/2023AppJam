@@ -13,7 +13,7 @@ public class StageInformation : PoolableMono
 
     private void Awake()
     {
-        //pump = transform.Find("WaterPump").GetComponent<WaterPump>();
+        pump = GetComponent<WaterPump>();
     }
 
     private void Update()
@@ -30,6 +30,11 @@ public class StageInformation : PoolableMono
             Init();
             StageManager.Instance.ClearStage();
         }
+    }
+
+    public void DefeatStage()
+    {
+
     }
 
     public override void Init()

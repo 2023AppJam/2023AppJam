@@ -12,7 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96c484667889d0242b92649ad0e6b139, type: 3}
   m_Name: Stage2
   m_EditorClassIdentifier: 
-  blockList: []
-  pumpSequence: []
-  runningTime: 10
-  stageIndex: 1
+  blockList:
+  - block: {fileID: 11400000, guid: 03d71b63e408ed84887e749b9ce0bb7a, type: 2}
+    quantity: 3
+  pumpSequence:
+  - pos: {x: -9, y: 11}
+    dir: {x: 0, y: -9.81}
+    count: 15
+    delay: 0.5
+    interval: 0.1
+  - pos: {x: -6, y: 11}
+    dir: {x: 0, y: -9.81}
+    count: 15
+    delay: 1
+    interval: 0.1
+  - pos: {x: -3, y: 11}
+    dir: {x: 0, y: -9.81}
+    count: 15
+    delay: 1
+    interval: 0.1
+  runningTime: 5
+  stageIndex: 2

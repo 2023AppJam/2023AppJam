@@ -16,5 +16,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 16
   blockSprite: {fileID: 21300000, guid: 432bd424c91dd1345a26c1dc90f79f78, type: 3}
+  polygon: {fileID: 124484500008695219, guid: 20a8fb72c4074cf4d900a253994b0008, type: 3}
+  blockName: OrangeWallDiagonal
   maxHP: 10
   damage: 1

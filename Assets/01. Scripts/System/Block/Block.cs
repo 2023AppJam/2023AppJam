@@ -4,7 +4,7 @@ using UnityEngine.Events;
 public class Block : PoolableMono, IDamageable
 {
     [SerializeField] BlockDataSO blockData;
-    [SerializeField] UnityEvent onDestoryEvnet;
+    [SerializeField] UnityEvent onDestoryEvent;
 
     private float hp;
 
@@ -31,7 +31,7 @@ public class Block : PoolableMono, IDamageable
 
     private void DestroyEvent()
     {
-        onDestoryEvnet?.Invoke();
+        onDestoryEvent?.Invoke();
         Destroy(gameObject);
     }
 

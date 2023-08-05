@@ -8,10 +8,11 @@ public class BlockSlot : MonoBehaviour
     [SerializeField] List<Text> blockTexts;
     [SerializeField] Sprite emptySprite;
     private List<BlockQuantity> blocks;
+    public List<BlockQuantity> Blocks => blocks;
 
     public void SetBlocks(List<BlockQuantity> blocks)
     {
-        this.blocks = blocks;
+        this.blocks = new List<BlockQuantity>(blocks);
 
         for(int i = 0; i < blockImages.Count; i++)
         {
@@ -25,7 +26,12 @@ public class BlockSlot : MonoBehaviour
                 blockImages[i].sprite = emptySprite;
                 blockTexts[i].text = "0";
             }
-
         }
+    }
+
+    public void UseBlock(int index)
+    {
+        blocks[index] = new BlockQuantity(blocks[index].block, blocks[index].quantity - 1);
+        blockTexts[index].text = blocks[index].quantity.ToString();
     }
 }

@@ -15,6 +15,16 @@ MonoBehaviour:
   blockList:
   - block: {fileID: 11400000, guid: 03d71b63e408ed84887e749b9ce0bb7a, type: 2}
     quantity: 3
-  pumpSequence: []
+  pumpSequence:
+  - pos: {x: 11, y: 11}
+    dir: {x: -7.4556, y: -6.3765}
+    count: 15
+    delay: 0.5
+    interval: 0.1
+  - pos: {x: 20, y: 10}
+    dir: {x: -8.4366, y: -5.0031}
+    count: 25
+    delay: 1.3
+    interval: 0.1
   runningTime: 5
-  stageIndex: 0
+  stageIndex: 1

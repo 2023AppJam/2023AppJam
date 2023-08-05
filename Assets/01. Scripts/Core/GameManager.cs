@@ -72,4 +72,16 @@ public class GameManager : MonoBehaviour
             return remainText;
         }
     }
+
+    private BlockBuilder blockBuilder = null;
+    public BlockBuilder BlockBuilder
+    {
+        get
+        {
+            if (blockBuilder == null)
+                blockBuilder = GameObject.Find("BlockBuilder").GetComponent<BlockBuilder>();
+
+            return blockBuilder;
+        }
+    }
 }
