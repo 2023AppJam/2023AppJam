@@ -37,6 +37,16 @@ public class StageManager : MonoBehaviour
 
     #endregion
 
+    private BlockSlot slot = null;
+    public BlockSlot Slot {
+        get {
+            if (slot == null)
+                slot = GameObject.Find("ItemBox")?.GetComponent<BlockSlot>();
+
+            return slot;
+        } 
+    }
+
     public int currentStage { get; private set; }
     public GameObject canvas;
     private StageInformation _currentStageInfo;
@@ -80,15 +90,20 @@ public class StageManager : MonoBehaviour
         //    return;
         //}
         
-        Debug.Log("Destroying GameObject for Stage #" + (currentStage - 1));
+        //Debug.Log("Destroying GameObject for Stage #" + (currentStage - 1));
         if (_currentStageInfo)
         {
             PoolManager.Instance.Push(_currentStageInfo);
             //Destroy(_currentStageGameObject);
         }
+
         _currentStageInfo = PoolManager.Instance.Pop($"Stage{currentStage}") as StageInformation;
+        //Debug.Log($"Stage{currentStage}");
         _currentStageInfo.transform.position = Vector3.zero;
-        Debug.Log("Instantiating GameObject for Stage #" + currentStage);
+        //Debug.Log(_currentStageInfo);
+        //Debug.Log("Instantiating GameObject for Stage #" + currentStage);
+
+        Slot.SetBlocks(_currentStageInfo.StageData.blockList);
 
         //Instantiate(stagePrefabs[currentStage]); // Edit later using PoolManager
     }

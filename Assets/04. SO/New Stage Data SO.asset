@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96c484667889d0242b92649ad0e6b139, type: 3}
   m_Name: New Stage Data SO
   m_EditorClassIdentifier: 
-  blockList: []
+  blockList:
+  - block: {fileID: 11400000, guid: 02e6cf43d56df4545965a037da590c7a, type: 2}
+    quantity: 3
   pumpSequence: []
   runningTime: 0
   stageIndex: 0
