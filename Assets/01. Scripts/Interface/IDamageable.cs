@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public interface IBlock
+public interface IDamageable
 {
     public void OnDamage(float damage);
 }
