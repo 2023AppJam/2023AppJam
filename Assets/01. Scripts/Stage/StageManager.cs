@@ -34,11 +34,11 @@ public class StageManager : MonoBehaviour
             return _instance;
         }
     }
-    
-    # endregion
-    
+
+    #endregion
+
     public int currentStage { get; private set; }
-    private StageInformation _currentStageInformation;
+    public StageInformation CurrentStageInformation { get; private set; }
     private GameObject _currentStageGameObject;
     public List<GameObject> stagePrefabs = new();
 
@@ -61,7 +61,7 @@ public class StageManager : MonoBehaviour
         _currentStageGameObject = stagePrefabs[currentStage];
         Debug.Log("Instantiating GameObject for Stage #" + currentStage);
         Instantiate(stagePrefabs[currentStage]);
-        _currentStageInformation = _currentStageGameObject.GetComponent<StageInformation>();
+        CurrentStageInformation = _currentStageGameObject.GetComponent<StageInformation>();
     }
     
     private void NextStage()
