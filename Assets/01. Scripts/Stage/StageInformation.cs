@@ -1,8 +1,33 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class StageInformation : MonoBehaviour
+public class StageInformation : PoolableMono
 {
-    public int waterAmount = 0;
+    [SerializeField] StageDataSO stageData;
+
+    private WaterPump pump;
+
+    private void Awake()
+    {
+        pump = transform.Find("WaterPump").GetComponent<WaterPump>();
+    }
+
+    public override void Init()
+    {
+        StopAllCoroutines();
+    }
+
+    public void StartSequence()
+    {
+        StartCoroutine(SequenceCoroutine());
+    }
+
+    private IEnumerator SequenceCoroutine()
+    {
+        foreach(PumpSequence sequence in stageData.pumpSequence)
+        {
+            yield return new WaitForSeconds(sequence.delay);
+            pump.SplashWater(sequence.count, sequence.pos, sequence.dir, sequence.interval);
+        }
+    }
 }
