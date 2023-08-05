@@ -60139,7 +60139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!156049354 &1206557946
 Grid:
   m_ObjectHideFlags: 0
@@ -60334,8 +60334,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1d9d3218a81e43dfbc6ac85efd5551e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
-  stagePrefabs: []
 --- !u!1 &1319435410
 GameObject:
   m_ObjectHideFlags: 0
