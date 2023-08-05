@@ -60,14 +60,14 @@ public class UIManager : MonoBehaviour
 
     public void ClosePopup()
     {
-        SoundManager.Instance.PlayClickSound();
+        // 클릭사운드
         Transform popup = _ui.Find("Popup");
         popup.gameObject.SetActive(false);
     }
 
     public void OpenItemBox()
     {
-        SoundManager.Instance.PlayClickSound();
+        // 클릭사운드
         GameObject itemBox = _ui.Find("ItemBox").gameObject;
         itemBox.SetActive(!itemBox.activeSelf);
     }
