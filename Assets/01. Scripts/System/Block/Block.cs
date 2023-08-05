@@ -10,7 +10,7 @@ public class Block : PoolableMono, IDamageable
 
     private void Awake()
     {
-        Init();
+        //Init();
     }
 
     private void Update()
