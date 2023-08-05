@@ -39,9 +39,7 @@ public class StageManager : MonoBehaviour
 
     public int currentStage { get; private set; }
     public GameObject canvas;
-    public StageInformation CurrentStageInformation { get; private set; }
-    private GameObject _currentStageGameObject;
-    public List<GameObject> stagePrefabs = new();
+    private StageInformation _currentStageInfo;
 
     public void ClearStage()
     {
@@ -76,20 +74,22 @@ public class StageManager : MonoBehaviour
         {
             canvas.SetActive(false);
         }
-        if (currentStage >= stagePrefabs.Count)
-        {
-            Debug.Log("Game Clear!");
-            return;
-        }
+        //if (currentStage >= stagePrefabs.Count)
+        //{
+        //    Debug.Log("Game Clear!");
+        //    return;
+        //}
         
         Debug.Log("Destroying GameObject for Stage #" + (currentStage - 1));
-        if (_currentStageGameObject)
+        if (_currentStageInfo)
         {
-            Destroy(_currentStageGameObject);
+            PoolManager.Instance.Push(_currentStageInfo);
+            //Destroy(_currentStageGameObject);
         }
-        _currentStageGameObject = stagePrefabs[currentStage];
+        _currentStageInfo = PoolManager.Instance.Pop($"Stage{currentStage}") as StageInformation;
+        _currentStageInfo.transform.position = Vector3.zero;
         Debug.Log("Instantiating GameObject for Stage #" + currentStage);
-        Instantiate(stagePrefabs[currentStage]); // Edit later using PoolManager
-        CurrentStageInformation = _currentStageGameObject.GetComponent<StageInformation>();
+
+        //Instantiate(stagePrefabs[currentStage]); // Edit later using PoolManager
     }
 }

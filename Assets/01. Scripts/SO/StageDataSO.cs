@@ -7,4 +7,5 @@ public class StageDataSO : ScriptableObject
     public List<BlockQuantity> blockList;
     public List<PumpSequence> pumpSequence;
     public float runningTime;
+    public int stageIndex;
 }
