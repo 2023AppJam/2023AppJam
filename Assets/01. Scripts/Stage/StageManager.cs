@@ -46,6 +46,7 @@ public class StageManager : MonoBehaviour
     {
         Debug.Log("Stage #" + currentStage + " Cleared!");
         // Å¬¸®¾î ÆË¾÷ ¶ç¿ì±â
+        transform.Find("InGamePanel").GetChild(3).gameObject.SetActive(true);
     }
     
     public void SelectStage(int stageNumber)

@@ -34,7 +34,7 @@ public class StageInformation : PoolableMono
 
     public void DefeatStage()
     {
-        
+        GameObject.Find("InGamePanel").transform.GetChild(2).gameObject.SetActive(true);
     }
 
     public override void Init()
