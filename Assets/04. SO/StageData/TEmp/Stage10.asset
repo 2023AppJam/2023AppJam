@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c484667889d0242b92649ad0e6b139, type: 3}
+  m_Name: Stage10
+  m_EditorClassIdentifier: 
+  blockList:
+  - block: {fileID: 11400000, guid: 03d71b63e408ed84887e749b9ce0bb7a, type: 2}
+    quantity: 3
+  pumpSequence:
+  - pos: {x: 19, y: -5}
+    dir: {x: -8.7309, y: -4.4145}
+    count: 15
+    delay: 0.5
+    interval: 0.1
+  - pos: {x: 19, y: 10}
+    dir: {x: -8.7309, y: 4.4145}
+    count: 15
+    delay: 0.5
+    interval: 0.1
+  runningTime: 4
+  stageIndex: 10

@@ -21,5 +21,20 @@ MonoBehaviour:
     count: 15
     delay: 0.5
     interval: 0.1
-  runningTime: 4
+  - pos: {x: 21, y: 10}
+    dir: {x: -8.7309, y: -4.4145}
+    count: 15
+    delay: 0.5
+    interval: 0.1
+  - pos: {x: 21, y: 10}
+    dir: {x: -8.7309, y: -4.4145}
+    count: 15
+    delay: 0.5
+    interval: 0.1
+  - pos: {x: 21, y: 10}
+    dir: {x: -8.7309, y: -4.4145}
+    count: 15
+    delay: 0.5
+    interval: 0.1
+  runningTime: 7
   stageIndex: 5
