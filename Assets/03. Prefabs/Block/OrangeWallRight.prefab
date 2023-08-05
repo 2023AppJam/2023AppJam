@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 124484500008695219}
   - component: {fileID: 8624383881360332814}
   m_Layer: 0
-  m_Name: OrangeWallDiagonal
+  m_Name: OrangeWallRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68711cb4437ec2243a5389f86bcac2c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockData: {fileID: 11400000, guid: 03d71b63e408ed84887e749b9ce0bb7a, type: 2}
+  blockData: {fileID: 11400000, guid: 2bea05e80afa40a4396e928a165ace76, type: 2}
   onDestoryEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -94,12 +94,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.1875, y: -0.4375}
-      - {x: -0.4375, y: -0.1875}
-      - {x: -0.375, y: 0.3125}
-      - {x: -0.25, y: 0.4375}
-      - {x: 0.375, y: 0.25}
-      - {x: 0.4375, y: -0.25}
+    - - {x: -0.25, y: -0.4375}
+      - {x: -0.25, y: 0.3125}
+      - {x: -0.125, y: 0.5}
+      - {x: 0.1875, y: 0.5}
+      - {x: 0.3125, y: 0.3125}
+      - {x: 0.3125, y: -0.4375}
   m_UseDelaunayMesh: 0
 --- !u!212 &8624383881360332814
 SpriteRenderer:
@@ -142,7 +142,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 432bd424c91dd1345a26c1dc90f79f78, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45148a0df44e7c5428b12536a6c99a19, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
