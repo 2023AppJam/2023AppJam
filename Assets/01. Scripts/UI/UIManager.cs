@@ -71,4 +71,10 @@ public class UIManager : MonoBehaviour
         GameObject itemBox = _ui.Find("ItemBox").gameObject;
         itemBox.SetActive(!itemBox.activeSelf);
     }
+
+    public void StartGame()
+    {
+        _ui.Find("Levels").gameObject.SetActive(true);
+        _ui.Find("Main").gameObject.SetActive(false);
+    }
 }

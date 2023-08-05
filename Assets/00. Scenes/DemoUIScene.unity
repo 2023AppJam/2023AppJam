@@ -619,7 +619,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
-  stagePrefabs: []
 --- !u!1 &631906663
 GameObject:
   m_ObjectHideFlags: 0
